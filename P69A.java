@@ -3,25 +3,20 @@ import java.lang.*;
 
 public class P69A
 {
-    public static String checkEquilibrium(double X, double Y, double Z)
-    {
-        if ((X + Y + Z) == 0)
-        {
-            System.out.println("Yes");
-            return "Yes";
-        }
-        else
-        {
-            System.out.println("No");
-            return "No";
-        }
-    }
+
 
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter number of forces: ");
         int forces = input.nextInt();
+
+
+        calculate(forces, input);
+    }
+
+    public static void calculate(int forces, Scanner xyz)
+    {
 
         double XVectors = 0;
         double YVectors = 0;
@@ -31,22 +26,34 @@ public class P69A
         {
             System.out.println("Vectors of force " + i);
 
-            Scanner x = new Scanner(System.in);
             System.out.println("Enter vector x: ");
-            double xv = x.nextDouble();
+            double xv = xyz.nextDouble();
             XVectors = XVectors + xv;
 
-            Scanner y = new Scanner(System.in);
             System.out.println("Enter vector y: ");
-            double yv = y.nextDouble();
+            double yv = xyz.nextDouble();
             YVectors = YVectors + yv;
 
-            Scanner z = new Scanner(System.in);
             System.out.println("Enter vector z: ");
-            double zv = z.nextDouble();
+            double zv = xyz.nextDouble();
             ZVectors = ZVectors + zv;
         }
 
         checkEquilibrium(XVectors,YVectors,ZVectors);
+
+    }
+
+    public static String checkEquilibrium(double X, double Y, double Z)
+    {
+        if ((X + Y + Z) == 0)
+        {
+            System.out.println("YES");
+            return "Yes";
+        }
+        else
+        {
+            System.out.println("NO");
+            return "No";
+        }
     }
 }

@@ -10,8 +10,7 @@ public class P69A
         Scanner input = new Scanner(System.in);
         System.out.println("Enter number of forces: ");
         int forces = input.nextInt();
-
-
+        
         calculate(forces, input);
     }
 
